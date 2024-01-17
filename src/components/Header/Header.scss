@@ -39,18 +39,11 @@
     @include tablet {
       width: 35%;
     }
-    // @include desktop {
-    //   width: 25%;
-    // }
   }
 
   &__search-container {
     position: relative;
     width: 100%;
-
-    // @include desktop {
-    //   margin-left: 6rem;
-    // }
   }
 
   &__search-input {
@@ -111,9 +104,6 @@
     @include tablet {
       width: 23%;
     }
-    // @include desktop {
-    //   width: 15%;
-    // }
   }
 
   &__upload-icon {
