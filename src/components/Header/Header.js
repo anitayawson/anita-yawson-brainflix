@@ -33,6 +33,11 @@ function Header() {
         />
         <span className="header__button-text">Upload</span>
       </button>
+      <img
+        src={userImage}
+        alt="user icon"
+        className="header__user-img--mobile-hidden"
+      ></img>
     </header>
   );
 }
