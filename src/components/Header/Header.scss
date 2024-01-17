@@ -15,12 +15,20 @@
     justify-content: space-between;
   }
 
+  @include desktop {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   &__logo-container {
     text-align: center;
 
     @include tablet {
       margin-right: 5rem;
       align-self: end;
+    }
+    @include desktop {
+      margin-right: 45%;
     }
   }
 
@@ -31,11 +39,18 @@
     @include tablet {
       width: 35%;
     }
+    // @include desktop {
+    //   width: 25%;
+    // }
   }
 
   &__search-container {
     position: relative;
     width: 100%;
+
+    // @include desktop {
+    //   margin-left: 6rem;
+    // }
   }
 
   &__search-input {
@@ -96,6 +111,9 @@
     @include tablet {
       width: 23%;
     }
+    // @include desktop {
+    //   width: 15%;
+    // }
   }
 
   &__upload-icon {
