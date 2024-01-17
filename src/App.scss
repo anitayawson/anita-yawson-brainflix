@@ -1,0 +1,30 @@
+@use "./styles/partials/typography" as *;
+@use "./styles/partials/variables" as *;
+
+html,
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  color: $brainflix-black;
+}
+
+button,
+input {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+h1,
+h2,
+h3,
+figure,
+p {
+  margin: 0;
+}
