@@ -4,6 +4,16 @@
 .video-info {
   padding: 1rem;
 
+  @include tablet {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  @include desktop {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+
   &__title {
     @include page-header;
     margin-bottom: 1rem;
@@ -11,11 +21,18 @@
 
   &__content-wrapper {
     display: flex;
-    gap: 4rem;
+    gap: 5rem;
     border-top: $divider;
     border-bottom: $divider;
     padding-top: 1rem;
     padding-bottom: 1rem;
+
+    @include tablet {
+      justify-content: space-between;
+      border-top: none;
+      padding-top: 0;
+      padding-bottom: 0.5rem;
+    }
   }
 
   &__name-and-date,
@@ -23,6 +40,11 @@
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
+
+    @include tablet {
+      flex-direction: row;
+      gap: 2rem;
+    }
   }
 
   &__views-wrapper,
@@ -38,11 +60,19 @@
   &__detail {
     @include body-text;
     color: $silver;
+
+    @include tablet {
+      font-size: 0.75rem;
+    }
   }
 
   &__description {
     margin-top: 1rem;
     margin-bottom: 1rem;
     @include body-text;
+
+    @include tablet {
+      margin-top: 1.7rem;
+    }
   }
 }

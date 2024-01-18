@@ -8,8 +8,8 @@
   gap: 1rem;
 
   @include tablet {
-    padding-left: 2rem;
-    padding-right: 2rem;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -69,6 +69,7 @@
 
   &__user-img {
     width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
     object-fit: cover;
     object-position: 20%;
