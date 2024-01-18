@@ -1,0 +1,48 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.video-info {
+  padding: 1rem;
+
+  &__title {
+    @include page-header;
+    margin-bottom: 1rem;
+  }
+
+  &__content-wrapper {
+    display: flex;
+    gap: 4rem;
+    border-top: $divider;
+    border-bottom: $divider;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  &__name-and-date,
+  &__views-and-likes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  &__views-wrapper,
+  &__likes-wrapper {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__subheader {
+    @include sub-header;
+  }
+
+  &__detail {
+    @include body-text;
+    color: $silver;
+  }
+
+  &__description {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    @include body-text;
+  }
+}

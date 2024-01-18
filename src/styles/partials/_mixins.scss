@@ -11,3 +11,26 @@
     @content;
   }
 }
+
+@mixin page-header {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: $font-bold;
+}
+
+@mixin section-header {
+}
+
+@mixin sub-header {
+  font-size: 0.82rem;
+  line-height: 1.125rem;
+  font-weight: $font-bold;
+}
+
+@mixin body-text {
+  font-size: 0.82rem;
+  line-height: 1.125rem;
+}
+
+@mixin label-styles {
+}
