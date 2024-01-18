@@ -12,16 +12,18 @@ function CommentSection() {
           <label typeof="comment" className="form__input-label">
             Join the conversation
           </label>
-          <textarea
-            className="form__input"
-            id="comment"
-            placeholder="Add a new comment"
-            rows={4}
-          ></textarea>
-          <button className="form__add-comment-btn">
-            <img className="form__add-icon" src={addIcon} alt="add icon" />
-            <span className="form__button-text">Comment</span>
-          </button>
+          <div className="form__tablet-flex-container">
+            <textarea
+              className="form__input"
+              id="comment"
+              placeholder="Add a new comment"
+              rows={4}
+            ></textarea>
+            <button className="form__add-comment-btn">
+              <img className="form__add-icon" src={addIcon} alt="add icon" />
+              <span className="form__button-text">Comment</span>
+            </button>
+          </div>
         </div>
       </form>
       <div className="comments-list">
