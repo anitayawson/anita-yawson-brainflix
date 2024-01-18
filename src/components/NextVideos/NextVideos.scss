@@ -1,0 +1,46 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.next-videos {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+
+  &__title {
+    @include label-styles;
+    margin-bottom: 1rem;
+  }
+}
+
+.video-list {
+  width: 100%;
+}
+.video {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+
+  &__thumbnail-container {
+    width: 48%;
+  }
+
+  &__thumbnail {
+    border-radius: 4px;
+    background-color: $mercury;
+    height: 4rem;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__details {
+    @include body-text;
+  }
+
+  &__title {
+    @include sub-header;
+    margin-bottom: 0.5rem;
+  }
+
+  &__creator {
+  }
+}
