@@ -1,0 +1,11 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.current-video__thumbnail {
+  @include tablet {
+    &::poster {
+      margin-left: 5rem;
+      margin-right: 5rem;
+    }
+  }
+}
