@@ -35,6 +35,51 @@ function NextVideos() {
             <p className="video__creator">Todd Welch</p>
           </div>
         </article>
+        <article className="video">
+          <div className="video__thumbnail-container">
+            <img
+              className="video__thumbnail"
+              src="https://project-2-api.herokuapp.com/images/image2.jpg"
+              alt="thumbnail"
+            />
+          </div>
+          <div className="video__details">
+            <p className="video__title">
+              Become A Travel Pro In One Easy Lesson
+            </p>
+            <p className="video__creator">Todd Welch</p>
+          </div>
+        </article>
+        <article className="video">
+          <div className="video__thumbnail-container">
+            <img
+              className="video__thumbnail"
+              src="https://project-2-api.herokuapp.com/images/image2.jpg"
+              alt="thumbnail"
+            />
+          </div>
+          <div className="video__details">
+            <p className="video__title">
+              Become A Travel Pro In One Easy Lesson
+            </p>
+            <p className="video__creator">Todd Welch</p>
+          </div>
+        </article>
+        <article className="video">
+          <div className="video__thumbnail-container">
+            <img
+              className="video__thumbnail"
+              src="https://project-2-api.herokuapp.com/images/image2.jpg"
+              alt="thumbnail"
+            />
+          </div>
+          <div className="video__details">
+            <p className="video__title">
+              Become A Travel Pro In One Easy Lesson
+            </p>
+            <p className="video__creator">Todd Welch</p>
+          </div>
+        </article>
       </div>
     </section>
   );

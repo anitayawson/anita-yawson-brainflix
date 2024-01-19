@@ -10,9 +10,15 @@ function App() {
     <div className="App">
       <Header />
       <VideoPlayer />
-      <VideoInfo />
-      <CommentSection />
-      <NextVideos />
+      <div className="desktop-layout">
+        <div className="desktop-layout__info-and-comments">
+          <VideoInfo />
+          <CommentSection />
+        </div>
+        <div className="desktop-layout__next-videos">
+          <NextVideos />
+        </div>
+      </div>
     </div>
   );
 }

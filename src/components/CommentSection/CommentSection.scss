@@ -11,6 +11,12 @@
     padding-right: 2.5rem;
     padding-top: 1rem;
   }
+
+  @include desktop {
+    padding-left: 0;
+    padding-right: 1rem;
+  }
+
   &__subheader {
     @include sub-header;
   }

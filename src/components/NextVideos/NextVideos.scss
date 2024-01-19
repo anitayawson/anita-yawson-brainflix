@@ -6,6 +6,17 @@
   padding-right: 1rem;
   padding-bottom: 1rem;
 
+  @include tablet {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  @include desktop {
+    border-left: $divider;
+    padding-left: 1rem;
+    padding-right: 0;
+  }
+
   &__title {
     @include label-styles;
     margin-bottom: 1rem;
@@ -13,7 +24,13 @@
 }
 
 .video-list {
-  width: 100%;
+  @include tablet {
+    width: 45%;
+  }
+
+  @include desktop {
+    width: 100%;
+  }
 }
 .video {
   display: flex;
