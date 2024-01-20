@@ -1,12 +1,13 @@
 import "./VideoPlayer.scss";
 
-function VideoPlayer() {
+function VideoPlayer({ selectedVideo }) {
   return (
     <video
+      style={{ aspectRatio: "16/9" }}
       className="current-video__thumbnail"
       width="100%"
       controls
-      poster="https://project-2-api.herokuapp.com/images/image0.jpg"
+      poster={selectedVideo.image}
     ></video>
   );
 }
