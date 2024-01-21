@@ -11,7 +11,8 @@
 
   @include desktop {
     padding-left: 0;
-    padding-right: 1rem;
+    padding-right: 0;
+    padding-top: 2rem;
   }
 
   &__title {
@@ -32,6 +33,10 @@
       border-top: none;
       padding-top: 0;
       padding-bottom: 0.5rem;
+    }
+
+    @include desktop {
+      padding-right: 1.75rem;
     }
   }
 
@@ -72,6 +77,10 @@
 
     @include tablet {
       margin-top: 1.7rem;
+    }
+
+    @include desktop {
+      padding-right: 1.75rem;
     }
   }
 }

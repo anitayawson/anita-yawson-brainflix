@@ -4,9 +4,13 @@ import addIcon from "../../assets/images/icons/add_comment.svg";
 import moment from "moment";
 
 function CommentSection({ selectedVideo }) {
+  const commentCount = selectedVideo.comments.length;
+
   return (
     <section className="comments-section">
-      <p className="comments-section__subheader">3 Comments</p>
+      <p className="comments-section__subheader">
+        {commentCount} {commentCount === 1 ? "Comment" : "Comments"}
+      </p>
       <form className="form">
         <img className="form__user-img" src={userImage} alt="user icon" />
         <div className="form__content-wrapper">

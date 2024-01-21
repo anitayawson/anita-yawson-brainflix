@@ -15,7 +15,7 @@ function NextVideos({ videos, selectVideo }) {
               <img
                 className="video__thumbnail"
                 src={video.image}
-                alt="thumbnail"
+                alt={video.title}
               />
             </div>
             <div className="video__details">

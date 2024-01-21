@@ -14,7 +14,8 @@
 
   @include desktop {
     padding-left: 0;
-    padding-right: 1rem;
+    padding-right: 0rem;
+    padding-bottom: 3.5rem;
   }
 
   &__subheader {
@@ -30,6 +31,10 @@
 
   @include tablet {
     width: 100%;
+  }
+
+  @include desktop {
+    padding-right: 1.75rem;
   }
 
   &__content-wrapper {
@@ -120,6 +125,14 @@
   @include tablet {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
+  }
+
+  @include desktop {
+    padding-right: 1.75rem;
+
+    &:last-child {
+      border-bottom: none;
+    }
   }
 
   &__avatar-placeholder {
