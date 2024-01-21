@@ -1,6 +1,7 @@
 import "./CommentSection.scss";
 import userImage from "../../assets/images/Mohan-muruge.jpg";
 import addIcon from "../../assets/images/icons/add_comment.svg";
+import moment from "moment";
 
 function CommentSection({ selectedVideo }) {
   return (
@@ -33,7 +34,9 @@ function CommentSection({ selectedVideo }) {
             <div className="comment__body">
               <div className="comment__author-and-date">
                 <p className="comment__author">{comment.name}</p>
-                <p className="comment__date">{comment.timestamp}</p>
+                <p className="comment__date">
+                  {moment(comment.timestamp).fromNow()}
+                </p>
               </div>
               <p className="comment__text">{comment.comment}</p>
             </div>

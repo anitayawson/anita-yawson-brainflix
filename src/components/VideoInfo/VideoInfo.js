@@ -1,6 +1,7 @@
 import "./VideoInfo.scss";
 import ViewIcon from "../../assets/images/icons/views.svg";
 import LikeIcon from "../../assets/images/icons/likes.svg";
+import moment from "moment";
 
 function VideoInfo({ selectedVideo }) {
   return (
@@ -9,7 +10,9 @@ function VideoInfo({ selectedVideo }) {
       <article className="video-info__content-wrapper">
         <div className="video-info__name-and-date">
           <p className="video-info__subheader">By {selectedVideo.channel}</p>
-          <p className="video-info__detail">{selectedVideo.timestamp}</p>
+          <p className="video-info__detail">
+            {moment(selectedVideo.timestamp).fromNow()}
+          </p>
         </div>
         <div className="video-info__views-and-likes">
           <div className="video-info__views-wrapper">
