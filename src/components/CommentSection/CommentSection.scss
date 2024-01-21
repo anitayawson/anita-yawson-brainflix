@@ -86,14 +86,7 @@
   }
 
   &__add-comment-btn {
-    background-color: $brainflix-blue;
-    border: none;
-    width: 100%;
-    height: 2.5rem;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    position: relative;
+    @include button-styles;
 
     @include tablet {
       width: 35%;
@@ -153,7 +146,8 @@
   }
 
   &__author {
-    @include sub-header;
+    @include body-text;
+    font-weight: $font-bold;
   }
 
   &__date {

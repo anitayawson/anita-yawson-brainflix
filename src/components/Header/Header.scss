@@ -16,8 +16,8 @@
   }
 
   @include desktop {
-    padding-left: 10%;
-    padding-right: 10%;
+    padding-left: 9%;
+    padding-right: 9%;
   }
 
   &__logo-container {
@@ -50,12 +50,11 @@
     height: 2.5rem;
     border-radius: 4px;
     border: 1px solid $mercury;
-    padding: 0.75rem;
+    padding: 0.75rem 0.75rem 0.75rem 2.25rem;
     background-color: $alabaster;
     width: 100%;
 
     &::placeholder {
-      padding-left: 1.5rem;
       color: $brainflix-black;
     }
   }
@@ -68,22 +67,14 @@
   }
 
   &__user-img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: 20%;
+    @include user-img-styles;
 
     &--mobile-hidden {
       display: none;
 
       @include tablet {
         display: inline-block;
-        width: 2.25rem;
-        height: 2.25rem;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: 20%;
+        @include user-img-styles;
       }
     }
 
@@ -93,14 +84,7 @@
   }
 
   &__upload-btn {
-    background-color: $brainflix-blue;
-    border: none;
-    width: 100%;
-    height: 2.5rem;
-    border-radius: 4px;
-    display: flex;
-    align-items: center;
-    position: relative;
+    @include button-styles;
 
     @include tablet {
       width: 23%;

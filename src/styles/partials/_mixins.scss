@@ -20,10 +20,8 @@
   @include tablet {
     font-size: 2.0625rem;
     line-height: 2.75rem;
+    font-weight: 900;
   }
-}
-
-@mixin section-header {
 }
 
 @mixin sub-header {
@@ -34,6 +32,7 @@
   @include tablet {
     font-size: 0.875rem;
     line-height: 1.375rem;
+    font-weight: 900;
   }
 }
 
@@ -53,4 +52,23 @@
   color: $silver;
   text-transform: uppercase;
   font-weight: $font-demi;
+}
+
+@mixin user-img-styles {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 20%;
+}
+
+@mixin button-styles {
+  background-color: $brainflix-blue;
+  border: none;
+  width: 100%;
+  height: 2.5rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  position: relative;
 }

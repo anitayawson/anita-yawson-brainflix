@@ -8,25 +8,35 @@ body {
   margin: 0;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   color: $brainflix-black;
+
+  * {
+    box-sizing: inherit;
+  }
 }
 
-button,
 input,
 textarea {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   font-size: 0.75rem;
+
+  &:focus {
+    outline: 2px solid $brainflix-blue;
+  }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
+button {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-size: 0.75rem;
+
+  &:hover {
+    background-color: $brainflix-dark-blue;
+    cursor: pointer;
+  }
 }
 
 h1,
 h2,
 h3,
-figure,
 p {
   margin: 0;
 }

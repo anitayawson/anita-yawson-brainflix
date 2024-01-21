@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header__logo-container">
-        <img src={logo} alt="BrainFlix Logo" />
+        <img className="header__logo" src={logo} alt="BrainFlix Logo" />
       </div>
       <div className="header__search-user-container">
         <div className="header__search-container">
