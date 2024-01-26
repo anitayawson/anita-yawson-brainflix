@@ -1,0 +1,15 @@
+main {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.thumbnail {
+  &__img {
+    width: 100%;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
