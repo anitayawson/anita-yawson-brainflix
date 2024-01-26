@@ -1,0 +1,19 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.desktop-layout {
+  @include desktop {
+    display: flex;
+    padding-left: 9%;
+    padding-right: 9%;
+
+    &__info-and-comments {
+      flex: 2;
+    }
+
+    &__next-videos {
+      flex: 1;
+      border-left: $divider;
+    }
+  }
+}

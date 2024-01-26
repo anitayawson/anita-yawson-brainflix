@@ -1,42 +1,16 @@
-import { useState } from "react";
 import "./App.scss";
-import CommentSection from "./components/CommentSection/CommentSection";
 import Header from "./components/Header/Header";
-import NextVideos from "./components/NextVideos/NextVideos";
-import VideoInfo from "./components/VideoInfo/VideoInfo";
-import VideoPlayer from "./components/VideoPlayer/VideoPlayer";
-import videoData from "./data/videos.json";
-import videoDetailsData from "./data/video-details.json";
+import MainVideo from "./pages/MainVideo/MainVideo";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
-  const [videos] = useState(videoData);
-  const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
-
-  const handleSelectVideo = (clickedId) => {
-    const clickedVideo = videoDetailsData.find(
-      (video) => clickedId === video.id
-    );
-    setSelectedVideo(clickedVideo);
-  };
-
-  const filteredVideos = videos.filter(
-    (video) => video.id !== selectedVideo.id
-  );
-
   return (
-    <div className="App">
+    <BrowserRouter>
       <Header />
-      <VideoPlayer selectedVideo={selectedVideo} />
-      <div className="desktop-layout">
-        <div className="desktop-layout__info-and-comments">
-          <VideoInfo selectedVideo={selectedVideo} />
-          <CommentSection selectedVideo={selectedVideo} />
-        </div>
-        <div className="desktop-layout__next-videos">
-          <NextVideos videos={filteredVideos} selectVideo={handleSelectVideo} />
-        </div>
-      </div>
-    </div>
+      <Routes>
+        <Route path="/" element={<MainVideo />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
