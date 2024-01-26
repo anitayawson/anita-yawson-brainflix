@@ -1,15 +1,83 @@
-main {
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
 
-.thumbnail {
-  &__img {
-    width: 100%;
+.video-upload {
+  &__wrapper {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-top: $divider;
   }
 }
 
-.form {
-  display: flex;
-  flex-direction: column;
+.title {
+  @include page-header;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.thumbnail {
+  &__label {
+    @include label-styles;
+    margin-bottom: 0.25rem;
+  }
+
+  &__img {
+    width: 100%;
+    border-radius: 4px;
+    background-color: $mercury;
+  }
+}
+
+.upload-form {
+  margin-top: 0.5rem;
+
+  &__input-label {
+    @include label-styles;
+    margin-bottom: 0.25rem;
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    border: $divider;
+    padding: 0.75rem;
+    background-color: $alabaster;
+    margin-bottom: 1rem;
+
+    &::placeholder {
+      color: $brainflix-black;
+      font-size: 0.82rem;
+    }
+  }
+
+  &__publish-btn {
+    @include button-styles;
+    margin-top: 1.5rem;
+  }
+
+  &__publish-icon {
+    position: absolute;
+    left: 0.7rem;
+    width: 1.25rem;
+  }
+
+  &__btn-text {
+    margin: auto;
+    font-weight: $font-demi;
+    text-transform: uppercase;
+    color: white;
+  }
+
+  &__cancel-btn {
+    text-transform: uppercase;
+    background-color: transparent;
+    border: none;
+    color: $brainflix-blue;
+    font-weight: $font-demi;
+    // font-size: 0.82rem;
+    width: 100%;
+    margin: auto;
+    margin-top: 2rem;
+  }
 }
