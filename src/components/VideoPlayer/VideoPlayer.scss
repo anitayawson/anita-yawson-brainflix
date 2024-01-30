@@ -1,7 +1,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-video {
+.current-video__thumbnail {
   aspect-ratio: 16/9;
   background-color: $brainflix-dark-black;
 }

@@ -33,10 +33,13 @@
     width: 100%;
   }
 }
+
 .video {
   display: flex;
   gap: 1rem;
   margin-bottom: 0.4rem;
+  text-decoration: none;
+  color: $brainflix-black;
 
   &:hover {
     cursor: pointer;

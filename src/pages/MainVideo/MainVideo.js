@@ -66,13 +66,13 @@ export default function MainVideo() {
     <main>
       <VideoPlayer selectedVideo={selectedVideo} />
       <div className="desktop-layout">
-        <div className="desktop-layout__info-and-comments">
+        <section className="desktop-layout__info-and-comments">
           <VideoInfo selectedVideo={selectedVideo} />
           <CommentSection selectedVideo={selectedVideo} />
-        </div>
-        <div className="desktop-layout__next-videos">
+        </section>
+        <section className="desktop-layout__next-videos">
           <NextVideos videos={filteredVideos} selectVideo={handleSelectVideo} />
-        </div>
+        </section>
       </div>
     </main>
   );

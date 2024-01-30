@@ -30,14 +30,14 @@ export default function VideoUpload() {
 
   return (
     <main className="video-upload">
-      <div className="video-upload__wrapper">
+      <section className="video-upload__wrapper">
         <h1 className="title">Upload Video</h1>
         {isFormSubmitted && (
           <div className="upload-notification">
             <h3>Your video has been uploaded successfully! Redirecting...</h3>
           </div>
         )}
-        <div className="upload-form__desktop">
+        <section className="upload-form__desktop">
           <div className="thumbnail__container">
             <p className="thumbnail__label">Video Thumbnail</p>
             <img
@@ -70,7 +70,7 @@ export default function VideoUpload() {
               onChange={handleDescriptionChange}
             ></textarea>
           </form>
-        </div>
+        </section>
 
         <div className="upload-form__btn-container">
           <button
@@ -87,7 +87,7 @@ export default function VideoUpload() {
           </button>
           <button className="upload-form__cancel-btn">Cancel</button>
         </div>
-      </div>
+      </section>
     </main>
   );
 }
