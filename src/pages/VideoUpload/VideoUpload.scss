@@ -64,12 +64,11 @@
 
   @include desktop {
     width: 100%;
-    margin-top: 1.5rem;
+    margin-top: 0;
   }
 
   &__input-label {
     @include label-styles;
-    margin-bottom: 0.25rem;
   }
 
   &__input {
@@ -88,6 +87,7 @@
 
     @include desktop {
       margin-bottom: 1.2rem;
+      margin-top: 0.25rem;
     }
   }
 
