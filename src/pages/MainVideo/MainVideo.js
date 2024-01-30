@@ -31,12 +31,6 @@ export default function MainVideo() {
     fetchVideos();
   }, []);
 
-  useEffect(() => {
-    if (videos.length > 0) {
-      setSelectedVideo(videos[0]);
-    }
-  }, [videos]);
-
   const fetchVideoById = async (id) => {
     try {
       const response = await axios.get(
@@ -47,6 +41,12 @@ export default function MainVideo() {
       console.log(error);
     }
   };
+
+  useEffect(() => {
+    if (videos.length > 0) {
+      fetchVideoById(videos[0].id);
+    }
+  }, [videos]);
 
   useEffect(() => {
     if (videoId) {
