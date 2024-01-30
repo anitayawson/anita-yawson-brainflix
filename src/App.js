@@ -6,16 +6,6 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 
 function App() {
   return (
-<<<<<<< HEAD
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<MainVideo />} />
-        <Route path="/videos/:videoId" element={<MainVideo />} />
-        <Route path="/upload" element={<VideoUpload />} />
-      </Routes>
-    </BrowserRouter>
-=======
     <main>
       <BrowserRouter>
         <Header />
@@ -27,7 +17,6 @@ function App() {
         </Routes>
       </BrowserRouter>
     </main>
->>>>>>> feature/clean-ui
   );
 }
 
