@@ -12,7 +12,6 @@ function App() {
         <Route path="/" element={<MainVideo />} />
         <Route path="/videos/:videoId" element={<MainVideo />} />
         <Route path="/upload" element={<VideoUpload />} />
-        {/* <Route path="*" element={<NotFound />} /> */}
       </Routes>
     </BrowserRouter>
   );
