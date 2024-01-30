@@ -1,21 +1,61 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useParams, useNavigate } from "react-router-dom";
+import axios from "axios";
 import CommentSection from "../../components/CommentSection/CommentSection";
 import NextVideos from "../../components/NextVideos/NextVideos";
 import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
-import videoData from "../../data/videos.json";
-import videoDetailsData from "../../data/video-details.json";
 import "./MainVideo.scss";
 
+const BASE_URL = "https://project-2-api.herokuapp.com";
+const API_KEY = "6f6b7c6e-c46d-429c-a683-94ceba2740f1";
+
 export default function MainVideo() {
-  const [videos] = useState(videoData);
-  const [selectedVideo, setSelectedVideo] = useState(videoDetailsData[0]);
+  const [selectedVideo, setSelectedVideo] = useState({});
+  const [videos, setVideos] = useState([]);
+  const { videoId } = useParams();
+  const navigate = useNavigate();
+
+  const fetchVideos = async () => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/videos/?api_key=${API_KEY}`
+      );
+      setVideos(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchVideos();
+  }, []);
+
+  useEffect(() => {
+    if (videos.length > 0) {
+      setSelectedVideo(videos[0]);
+    }
+  }, [videos]);
+
+  const fetchVideoById = async (id) => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/videos/${id}?api_key=${API_KEY}`
+      );
+      setSelectedVideo(response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (videoId) {
+      fetchVideoById(videoId);
+    }
+  }, [videoId]);
 
   const handleSelectVideo = (clickedId) => {
-    const clickedVideo = videoDetailsData.find(
-      (video) => clickedId === video.id
-    );
-    setSelectedVideo(clickedVideo);
+    navigate(`/videos/${clickedId}`);
   };
 
   const filteredVideos = videos.filter(

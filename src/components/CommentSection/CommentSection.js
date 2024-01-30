@@ -4,7 +4,12 @@ import addIcon from "../../assets/images/icons/add_comment.svg";
 import moment from "moment";
 
 function CommentSection({ selectedVideo }) {
-  const commentCount = selectedVideo.comments.length;
+  if (!selectedVideo.comments) {
+    return null;
+  }
+
+  const comments = selectedVideo.comments;
+  const commentCount = comments.length;
 
   return (
     <section className="comments-section">

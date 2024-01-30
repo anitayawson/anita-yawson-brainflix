@@ -1,6 +1,13 @@
 import "./NextVideos.scss";
+import { useNavigate } from "react-router-dom";
 
-function NextVideos({ videos, selectVideo }) {
+function NextVideos({ videos }) {
+  const navigate = useNavigate();
+
+  const handleSelectVideo = (clickedId) => {
+    navigate(`/videos/${clickedId}`);
+  };
+
   return (
     <section className="next-videos">
       <p className="next-videos__title">Next Videos</p>
@@ -9,7 +16,7 @@ function NextVideos({ videos, selectVideo }) {
           <article
             key={video.id}
             className="video"
-            onClick={() => selectVideo(video.id)}
+            onClick={() => handleSelectVideo(video.id)}
           >
             <div className="video__thumbnail-container">
               <img
