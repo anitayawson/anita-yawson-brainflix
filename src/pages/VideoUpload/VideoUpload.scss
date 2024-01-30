@@ -6,6 +6,11 @@
     padding-left: 1rem;
     padding-right: 1rem;
     border-top: $divider;
+
+    @include tablet {
+      padding-left: 2.5rem;
+      padding-right: 2.5rem;
+    }
   }
 }
 
@@ -13,6 +18,13 @@
   @include page-header;
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+
+  @include tablet {
+    margin-top: 3rem;
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: $divider;
+  }
 }
 
 .thumbnail {
@@ -25,6 +37,10 @@
     width: 100%;
     border-radius: 4px;
     background-color: $mercury;
+
+    @include tablet {
+      width: 50%;
+    }
   }
 }
 
@@ -51,9 +67,26 @@
     }
   }
 
+  &__btn-container {
+    @include tablet {
+      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
+      border-top: $divider;
+      display: flex;
+      align-items: baseline;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  }
+
   &__publish-btn {
     @include button-styles;
     margin-top: 1.5rem;
+
+    @include tablet {
+      width: 23%;
+      order: 1;
+    }
   }
 
   &__publish-icon {
@@ -78,5 +111,11 @@
     width: 100%;
     margin: auto;
     margin-top: 2rem;
+    margin-bottom: 2.5rem;
+
+    @include tablet {
+      width: 23%;
+      margin: 0;
+    }
   }
 }

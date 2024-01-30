@@ -32,18 +32,20 @@ export default function VideoUpload() {
           <textarea
             className="upload-form__input"
             id="description"
-            placeholder="Add a video description"
+            placeholder="Add a description to your video"
             rows={4}
           ></textarea>
-          <button className="upload-form__publish-btn">
-            <img
-              className="upload-form__publish-icon"
-              src={publishIcon}
-              alt="add icon"
-            />
-            <span className="upload-form__btn-text">Publish</span>
-          </button>
-          <button className="upload-form__cancel-btn">Cancel</button>
+          <div className="upload-form__btn-container">
+            <button className="upload-form__publish-btn">
+              <img
+                className="upload-form__publish-icon"
+                src={publishIcon}
+                alt="add icon"
+              />
+              <span className="upload-form__btn-text">Publish</span>
+            </button>
+            <button className="upload-form__cancel-btn">Cancel</button>
+          </div>
         </form>
       </div>
     </main>
