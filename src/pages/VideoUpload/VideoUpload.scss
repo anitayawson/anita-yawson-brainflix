@@ -11,6 +11,11 @@
       padding-left: 2.5rem;
       padding-right: 2.5rem;
     }
+
+    @include desktop {
+      padding-left: 9%;
+      padding-right: 9%;
+    }
   }
 }
 
@@ -28,6 +33,12 @@
 }
 
 .thumbnail {
+  &__container {
+    @include desktop {
+      width: 50%;
+    }
+  }
+
   &__label {
     @include label-styles;
     margin-bottom: 0.25rem;
@@ -41,11 +52,20 @@
     @include tablet {
       width: 50%;
     }
+
+    @include desktop {
+      width: 100%;
+    }
   }
 }
 
 .upload-form {
   margin-top: 0.5rem;
+
+  @include desktop {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
 
   &__input-label {
     @include label-styles;
@@ -64,6 +84,10 @@
     &::placeholder {
       color: $brainflix-black;
       font-size: 0.82rem;
+    }
+
+    @include desktop {
+      margin-bottom: 1.2rem;
     }
   }
 
@@ -86,6 +110,10 @@
     @include tablet {
       width: 23%;
       order: 1;
+    }
+
+    @include desktop {
+      width: 15%;
     }
   }
 
@@ -116,6 +144,19 @@
     @include tablet {
       width: 23%;
       margin: 0;
+    }
+
+    @include desktop {
+      width: 15%;
+    }
+  }
+
+  &__desktop {
+    @include desktop {
+      display: flex;
+      gap: 1.75rem;
+      width: 100%;
+      // align-items: baseline;
     }
   }
 }
