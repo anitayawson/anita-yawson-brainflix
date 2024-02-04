@@ -7,8 +7,7 @@ import VideoInfo from "../../components/VideoInfo/VideoInfo";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 import "./MainVideo.scss";
 
-const BASE_URL = "https://project-2-api.herokuapp.com";
-const API_KEY = "6f6b7c6e-c46d-429c-a683-94ceba2740f1";
+const BASE_URL = process.env.REACT_APP_SERVER_URL;
 
 export default function MainVideo() {
   const [selectedVideo, setSelectedVideo] = useState({});
@@ -18,9 +17,7 @@ export default function MainVideo() {
 
   const fetchVideos = async () => {
     try {
-      const response = await axios.get(
-        `${BASE_URL}/videos/?api_key=${API_KEY}`
-      );
+      const response = await axios.get(`${BASE_URL}/videos`);
       setVideos(response.data);
     } catch (error) {
       console.log(error);
@@ -33,9 +30,7 @@ export default function MainVideo() {
 
   const fetchVideoById = async (id) => {
     try {
-      const response = await axios.get(
-        `${BASE_URL}/videos/${id}?api_key=${API_KEY}`
-      );
+      const response = await axios.get(`${BASE_URL}/videos/${id}`);
       setSelectedVideo(response.data);
     } catch (error) {
       console.log(error);
