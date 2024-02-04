@@ -38,7 +38,6 @@ export default function VideoUpload() {
     }
 
     const newVideo = {
-      image: "/images/Upload-video-preview.jpg",
       title: title,
       description: description,
     };
@@ -78,7 +77,6 @@ export default function VideoUpload() {
               className={`upload-form__input ${
                 inputError.title ? "error" : ""
               }`}
-              // className="upload-form__input"
               type="text"
               id="title"
               value={title}
@@ -92,7 +90,6 @@ export default function VideoUpload() {
               className={`upload-form__input ${
                 inputError.description ? "error" : ""
               }`}
-              // className="upload-form__input"
               id="description"
               value={description}
               placeholder="Add a description to your video"
