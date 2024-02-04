@@ -7,17 +7,17 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <main>
-      <BrowserRouter>
-        <Header />
+    <BrowserRouter>
+      <Header />
+      <main>
         <Routes>
           <Route path="/" element={<MainVideo />} />
           <Route path="/videos/:videoId" element={<MainVideo />} />
           <Route path="/upload" element={<VideoUpload />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </main>
+      </main>
+    </BrowserRouter>
   );
 }
 

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
-    <section className="not-found">
+    <main className="not-found">
       <div className="not-found__title">404</div>
       <p className="not-found__text">
         Oops! It seems like you've stumbled upon a page that doesn't exist. But
@@ -15,6 +15,6 @@ export default function NotFound() {
         </span>
         .
       </p>
-    </section>
+    </main>
   );
 }

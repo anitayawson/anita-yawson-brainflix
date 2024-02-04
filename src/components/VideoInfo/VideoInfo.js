@@ -5,7 +5,7 @@ import moment from "moment";
 
 function VideoInfo({ selectedVideo }) {
   return (
-    <main className="video-info">
+    <section className="video-info">
       <h1 className="video-info__title">{selectedVideo.title}</h1>
       <article className="video-info__content-wrapper">
         <div className="video-info__name-and-date">
@@ -26,7 +26,7 @@ function VideoInfo({ selectedVideo }) {
         </div>
       </article>
       <p className="video-info__description">{selectedVideo.description}</p>
-    </main>
+    </section>
   );
 }
 

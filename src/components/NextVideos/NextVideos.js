@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 function NextVideos({ videos }) {
   return (
-    <main className="next-videos">
+    <aside className="next-videos">
       <p className="next-videos__title">Next Videos</p>
       <div className="video-list">
         {videos.map((video) => (
@@ -22,7 +22,7 @@ function NextVideos({ videos }) {
           </Link>
         ))}
       </div>
-    </main>
+    </aside>
   );
 }
 
