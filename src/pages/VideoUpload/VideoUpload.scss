@@ -8,13 +8,11 @@
     border-top: $divider;
 
     @include tablet {
-      padding-left: 2.5rem;
-      padding-right: 2.5rem;
+      padding: 0 2.5rem;
     }
 
     @include desktop {
-      padding-left: 9%;
-      padding-right: 9%;
+      padding: 0 9%;
     }
   }
 }
@@ -25,8 +23,7 @@
   margin-bottom: 1.5rem;
 
   @include tablet {
-    margin-top: 3rem;
-    margin-bottom: 1.75rem;
+    margin: 3rem 0 1.75rem;
     padding-bottom: 1.5rem;
     border-bottom: $divider;
   }
@@ -97,8 +94,7 @@
 
   &__btn-container {
     @include tablet {
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin: 1.5rem 0;
       border-top: $divider;
       display: flex;
       align-items: baseline;
@@ -141,7 +137,6 @@
     color: $brainflix-blue;
     font-weight: $font-demi;
     width: 100%;
-    margin: auto;
     margin-top: 2rem;
     margin-bottom: 2.5rem;
 
@@ -172,8 +167,7 @@
   color: $brainflix-blue;
   text-align: center;
   font-size: 0.75rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin: 1.5rem 0;
 
   @include tablet {
     font-size: 1rem;

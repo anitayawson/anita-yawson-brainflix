@@ -2,20 +2,14 @@
 @use "../../styles/partials/mixins" as *;
 
 .next-videos {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
+  padding: 0 1rem 1rem;
 
   @include tablet {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 1rem 2.5rem;
   }
 
   @include desktop {
-    padding-left: 1rem;
-    padding-right: 0;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 2rem 0 2rem 1rem;
   }
 
   &__title {

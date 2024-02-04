@@ -8,8 +8,7 @@
   gap: 1rem;
 
   @include tablet {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
+    padding: 1rem 2.5rem;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
