@@ -11,7 +11,7 @@ function NextVideos({ videos }) {
             <div className="video__thumbnail-container">
               <img
                 className="video__thumbnail"
-                src={video.image}
+                src={`http://localhost:8080${video.image}`}
                 alt={video.title}
               />
             </div>

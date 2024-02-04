@@ -7,7 +7,7 @@ function VideoPlayer({ selectedVideo }) {
         className="current-video__thumbnail"
         width="100%"
         controls
-        poster={selectedVideo.image}
+        poster={`http://localhost:8080${selectedVideo.image}`}
       ></video>
     </main>
   );

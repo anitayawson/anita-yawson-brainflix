@@ -85,6 +85,10 @@
       font-size: 0.82rem;
     }
 
+    &.error {
+      border: 1px solid #d22d2d;
+    }
+
     @include desktop {
       margin-bottom: 1.2rem;
       margin-top: 0.25rem;
