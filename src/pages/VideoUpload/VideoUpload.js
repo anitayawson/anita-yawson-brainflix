@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import videoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import "./VideoUpload.scss";
@@ -16,6 +16,13 @@ export default function VideoUpload() {
     description: false,
   });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isFormSubmitted) {
+      setTitle("");
+      setDescription("");
+    }
+  }, [isFormSubmitted]);
 
   const handleTitleChange = (event) => {
     const inputValue = event.target.value;
@@ -45,7 +52,13 @@ export default function VideoUpload() {
     try {
       await axios.post(`${BASE_URL}/videos`, newVideo);
       setIsFormSubmitted(true);
-      navigate("/");
+
+      setTitle("");
+      setDescription("");
+
+      setTimeout(() => {
+        navigate("/");
+      }, 2750);
     } catch (err) {
       console.error("Error uploading video:", err);
     }
