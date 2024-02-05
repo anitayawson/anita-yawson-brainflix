@@ -1,31 +1,67 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
 import videoThumbnail from "../../assets/images/Upload-video-preview.jpg";
 import "./VideoUpload.scss";
 import publishIcon from "../../assets/images/icons/publish.svg";
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = process.env.REACT_APP_SERVER_URL;
+
 export default function VideoUpload() {
-  const navigate = useNavigate();
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+  const [inputError, setInputError] = useState({
+    title: false,
+    description: false,
+  });
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (isFormSubmitted) {
+      setTitle("");
+      setDescription("");
+    }
+  }, [isFormSubmitted]);
 
   const handleTitleChange = (event) => {
-    setTitle(event.target.value);
+    const inputValue = event.target.value;
+    setTitle(inputValue);
+    setInputError((prev) => ({ ...prev, title: inputValue === "" }));
   };
 
   const handleDescriptionChange = (event) => {
-    setDescription(event.target.value);
+    const inputValue = event.target.value;
+    setDescription(inputValue);
+    setInputError((prev) => ({ ...prev, description: inputValue === "" }));
   };
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
-    setIsFormSubmitted(true);
-    setTitle("");
-    setDescription("");
-    setTimeout(() => {
-      navigate("/");
-    }, 3000);
+
+    if (title === "" || description === "") {
+      setInputError({ title: title === "", description: description === "" });
+      return;
+    }
+
+    const newVideo = {
+      title: title,
+      description: description,
+    };
+
+    try {
+      await axios.post(`${BASE_URL}/videos`, newVideo);
+      setIsFormSubmitted(true);
+
+      setTitle("");
+      setDescription("");
+
+      setTimeout(() => {
+        navigate("/");
+      }, 2750);
+    } catch (err) {
+      console.error("Error uploading video:", err);
+    }
   };
 
   return (
@@ -51,7 +87,9 @@ export default function VideoUpload() {
               Title Your Video
             </label>
             <input
-              className="upload-form__input"
+              className={`upload-form__input ${
+                inputError.title ? "error" : ""
+              }`}
               type="text"
               id="title"
               value={title}
@@ -62,7 +100,9 @@ export default function VideoUpload() {
               Add A Video Description
             </label>
             <textarea
-              className="upload-form__input"
+              className={`upload-form__input ${
+                inputError.description ? "error" : ""
+              }`}
               id="description"
               value={description}
               placeholder="Add a description to your video"
@@ -85,7 +125,12 @@ export default function VideoUpload() {
             />
             <span className="upload-form__btn-text">Publish</span>
           </button>
-          <button className="upload-form__cancel-btn">Cancel</button>
+          <button
+            className="upload-form__cancel-btn"
+            onClick={() => navigate("/")}
+          >
+            Cancel
+          </button>
         </div>
       </section>
     </main>

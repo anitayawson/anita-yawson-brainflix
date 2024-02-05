@@ -2,26 +2,21 @@
 @use "../../styles/partials/mixins" as *;
 
 .comments-section {
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-bottom: 1rem;
+  padding: 0 1rem 1rem 1rem;
 
   @include tablet {
-    padding-left: 2.5rem;
-    padding-right: 2.5rem;
-    padding-top: 1rem;
+    padding: 1rem 2.5rem 0;
   }
 
   @include desktop {
-    padding-left: 0;
-    padding-right: 0rem;
-    padding-bottom: 3.5rem;
+    padding: 0 0 3.5rem;
   }
 
   &__subheader {
     @include sub-header;
   }
 }
+
 .form {
   display: flex;
   gap: 1rem;
@@ -111,8 +106,7 @@
 .comment {
   display: flex;
   gap: 1rem;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
   border-bottom: $divider;
 
   @include tablet {

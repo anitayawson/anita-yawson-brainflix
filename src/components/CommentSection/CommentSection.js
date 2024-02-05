@@ -1,22 +1,24 @@
+import React from "react";
 import "./CommentSection.scss";
 import userImage from "../../assets/images/Mohan-muruge.jpg";
 import addIcon from "../../assets/images/icons/add_comment.svg";
 import moment from "moment";
 
 function CommentSection({ selectedVideo }) {
-  if (!selectedVideo.comments) {
-    return null;
-  }
-
-  const comments = selectedVideo.comments;
+  const comments = selectedVideo.comments || [];
   const commentCount = comments.length;
 
+  const renderForm = commentCount === 0 || !selectedVideo.comments || comments;
+
   return (
-    <main>
-      <section className="comments-section">
-        <p className="comments-section__subheader">
-          {commentCount} {commentCount === 1 ? "Comment" : "Comments"}
-        </p>
+    <section className="comments-section">
+      <p className="comments-section__subheader">
+        {commentCount === 0
+          ? "No comments yet"
+          : `${commentCount} ${commentCount === 1 ? "Comment" : "Comments"}`}
+      </p>
+
+      {renderForm && (
         <form className="form">
           <img className="form__user-img" src={userImage} alt="user icon" />
           <div className="form__content-wrapper">
@@ -37,24 +39,25 @@ function CommentSection({ selectedVideo }) {
             </div>
           </div>
         </form>
-        <div className="comments-list">
-          {selectedVideo.comments.map((comment) => (
-            <article className="comment" key={comment.id}>
-              <div className="comment__avatar-placeholder"></div>
-              <div className="comment__body">
-                <div className="comment__author-and-date">
-                  <p className="comment__author">{comment.name}</p>
-                  <p className="comment__date">
-                    {moment(comment.timestamp).fromNow()}
-                  </p>
-                </div>
-                <p className="comment__text">{comment.comment}</p>
+      )}
+
+      <div className="comments-list">
+        {comments.map((comment) => (
+          <article className="comment" key={comment.id}>
+            <div className="comment__avatar-placeholder"></div>
+            <div className="comment__body">
+              <div className="comment__author-and-date">
+                <p className="comment__author">{comment.name}</p>
+                <p className="comment__date">
+                  {moment(comment.timestamp).fromNow()}
+                </p>
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
-    </main>
+              <p className="comment__text">{comment.comment}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 
