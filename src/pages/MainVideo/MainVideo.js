@@ -24,10 +24,6 @@ export default function MainVideo() {
     }
   };
 
-  useEffect(() => {
-    fetchVideos();
-  }, []);
-
   const fetchVideoById = async (id) => {
     try {
       const response = await axios.get(`${BASE_URL}/videos/${id}`);
@@ -38,16 +34,20 @@ export default function MainVideo() {
   };
 
   useEffect(() => {
-    if (videos.length > 0) {
-      fetchVideoById(videos[0].id);
-    }
-  }, [videos]);
+    fetchVideos();
+  }, []);
 
   useEffect(() => {
-    if (videoId) {
-      fetchVideoById(videoId);
+    if (videos.length > 0 && !videoId) {
+      navigate("/");
     }
-  }, [videoId]);
+  }, [videos, videoId, navigate]);
+
+  useEffect(() => {
+    if (videos.length > 0) {
+      fetchVideoById(videoId || videos[0].id);
+    }
+  }, [videos, videoId]);
 
   const handleSelectVideo = (clickedId) => {
     navigate(`/videos/${clickedId}`);
